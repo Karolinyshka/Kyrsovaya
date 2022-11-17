@@ -1,10 +1,10 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
+
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+
 
 import java.io.IOException;
 
@@ -16,12 +16,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("Login");
-        Scene scene = new Scene(root);
-        scene.setFill(Color.TRANSPARENT);
+        FXMLLoader fxmlLoader  = new FXMLLoader(Main.class.getResource("Login.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
+        stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
     }
+
+
 }
